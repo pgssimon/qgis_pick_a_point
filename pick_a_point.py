@@ -137,7 +137,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             parameters,
             self.START_POINT,
             context,
-            #crs = QgsCoordinateReferenceSystem("EPSG:2193")
+            # crs = QgsCoordinateReferenceSystem("EPSG:2193")
             crs = QgsCoordinateReferenceSystem(QgsProject().crs())
         )
 
@@ -161,8 +161,8 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             context,
             fields,
             QgsWkbTypes.MultiPoint,
-            #source.wkbType(),
-            #QgsCoordinateReferenceSystem("EPSG:2193")
+            # source.wkbType(),
+            # QgsCoordinateReferenceSystem("EPSG:2193")
             crs = QgsCoordinateReferenceSystem(QgsProject().crs())
         )
 
@@ -177,7 +177,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
 
         if point_sink is not None:
             results[self.OUTPUT] = dest_id
-            #geomPoints = QgsGeometry.fromMultiPointXY(points)
+            # geomPoints = QgsGeometry.fromMultiPointXY(points)
             geomPoints = QgsGeometry.fromMultiPointXY([startPoint])
             feat.setGeometry(geomPoints)
             feat['type'] = 'point'
