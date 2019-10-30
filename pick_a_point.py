@@ -138,7 +138,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             self.START_POINT,
             context,
             # crs = QgsCoordinateReferenceSystem("EPSG:2193")
-            crs = QgsCoordinateReferenceSystem(QgsProject().crs())
+            crs = QgsCoordinateReferenceSystem(QgsProject().instance().crs())
         )
 
         # If source was not found, throw an exception to indicate that the algorithm
@@ -163,7 +163,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
             QgsWkbTypes.MultiPoint,
             # source.wkbType(),
             # QgsCoordinateReferenceSystem("EPSG:2193")
-            crs = QgsCoordinateReferenceSystem(QgsProject().crs())
+            crs = QgsCoordinateReferenceSystem(QgsProject().instance().crs())
         )
 
         results = {}
